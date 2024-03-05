@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+header{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px ;
+    padding-left: 0;
+    padding-top: 0;
+    transition: 0.5s ease;
+}
+
+header .brand{
+color: black;
+font-size: 2rem;
+font-weight: 700;
+text-transform: uppercase;
+text-decoration: none;
+}
+
+header .brand:hover{
+    color: orangered;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header.navigation .navigation-items a:hover:before{
+    width: 100%;
+    background: orangered;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 140, 255, 0.959);
+}
+
+.home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(251, 3, 3, 0.034);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.home .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+.home .content.active{
+    display: block;
+}
+
+.home .content h1{
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.home .content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.home .content p{ /*changed somethings*/
+    margin-bottom: 65px;
+    text-align: justify;
+    color:white;
+    font-size: 18px;
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+    color: white; /* Set text color to contrast with background */
+    font-size: 18px; /* Adjust font size as needed */
+    line-height: 1.6; /* Adjust line height for readability */
+    padding: 10px; /* Add padding for better separation from background */
+    /*background-color: rgba(0, 0, 0, 0.1); Semi-transparent background color */
+    border-radius: 5px; /* Add rounded corners for better aesthetics */
+    text-align: justify;
+}
+
+.home .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: #09a6d4;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.home .content a:hover{
+    background: #09a6d4;
+    color: #fff;
+}
+
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+}
+
+.home .media-icons a:not(:last-child){
+margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+    transform:scale(1.3);
+    color: #000000;
+}
+
+.home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+   /* background: #09a6d4;*/
+   background-attachment: black;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.img-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+@media(max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+    section{
+        padding: 100px 20px;
+    }
+    .home .media-icons{
+        right: 15px;
+    }
+    header .navigation{
+        display: none;
+    }
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a{
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    header .navigation .navigation-items a:before{
+        background: #222;
+        height: 5px;
+    }
+    header .navigation .navigation-items{
+        background: white;
+        width: 500px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 /20%);
+    }
+    .menu-btn{
+        background: url(images/bar.png)no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-right: 20px;
+    }
+    .menu-btn.active{
+        z-index: 999;
+        background: url(images/times.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+}
+
+@media (max-width: 560px){
+    .home .content h1{
+        font-size: 3em;
+        line-height: 60px;
+    }
+}
+
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: ;
+    min-width: 120px;
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);*/
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: black	;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #09a6d4;
+}
+
+.dropdown:hover .dropdown-content {
+    display:block ;
+}
+
+
+.dropdown-trigger {
+    color: #ff0000; /* Change to the desired color */
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1040px) {
+    /* Existing styles for responsive screens */
+
+    .dropdown {
+        position: static; /* Change from relative to static */
+    }
+
+    .dropdown-content {
+        display: block; /* Always display the dropdown content */
+        position: static; /* Change from absolute to static */
+        min-width: auto; /* Adjust width as needed */
+        box-shadow: none; /* Remove box shadow */
+        border: 1px solid #ccc; /* Add a border for visibility */
+        border-radius: 5px; /* Add border radius for style */
+        background-color: #fff; /* Change background color */
+        margin-top: 5px; /* Add margin to separate from trigger */
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; /* Show dropdown content on hover */
+    }
+    .dropdown-content a {
+        display: block;
+        padding: 10px 20px; /* Adjust padding as needed */
+        color: black;
+        text-decoration: none;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .dropdown-content {
+      width: 100%;
+      position: static;
+      display: none;
+    }
+    
+    .dropdown-content a {
+      padding: 8px 16px;
+    }
+  }
+  
+
+
+
+
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 100px;
+    height: 30px;
+    display: flex;
+  }
+  .loader:before {
+    content: "";
+    background: #000;
+    width: 15px;
+    clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+    animation: l1 1.5s infinite linear;
+  }
+  /*@keyframes l1 {
+    90%,100%{flex-grow: 1}
+  }*/
+
+  .logo{
+    width: 50px;
+    height: auto;
+  }
+
+
+  .hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+  .show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+
+
+
+
+
+  
