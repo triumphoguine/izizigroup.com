@@ -113,18 +113,16 @@ section{
     text-align: center;
 }
 
-.home .content p{ /*changed somethings*/
+.home .content p{ 
     margin-bottom: 65px;
     text-align: justify;
     color:white;
     font-size: 18px;
-    /*background-color: rgba(0, 0, 0, 0.2);*/
-    color: white; /* Set text color to contrast with background */
-    font-size: 18px; /* Adjust font size as needed */
-    line-height: 1.6; /* Adjust line height for readability */
-    padding: 10px; /* Add padding for better separation from background */
-    /*background-color: rgba(0, 0, 0, 0.1); Semi-transparent background color */
-    border-radius: 5px; /* Add rounded corners for better aesthetics */
+    color: white; 
+    font-size: 18px; 
+    line-height: 1.6; 
+    padding: 10px; 
+    border-radius: 5px; 
     text-align: justify;
 }
 
@@ -197,7 +195,7 @@ margin-bottom: 20px;
 }
 
 .slider-navigation .nav-btn.active{
-   /* background: #09a6d4;*/
+   
    background-attachment: black;
 }
 
@@ -392,7 +390,7 @@ margin-bottom: 20px;
 
 
 
-/* HTML: <div class="loader"></div> */
+
 .loader {
     width: 100px;
     height: 30px;
@@ -405,9 +403,7 @@ margin-bottom: 20px;
     clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
     animation: l1 1.5s infinite linear;
   }
-  /*@keyframes l1 {
-    90%,100%{flex-grow: 1}
-  }*/
+  
 
   .logo{
     width: 50px;
